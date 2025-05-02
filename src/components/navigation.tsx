@@ -3,31 +3,28 @@
 import { useState } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Menu, X, Home, User, Code, Mail } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { RetroGlitch } from "@/components/retro-glitch"
+import { Menu, X } from "lucide-react"
 import { useTransition } from "./page-transition"
-
+import { RetroGlitch } from "@/components/retro-glitch"
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
   const pathname = usePathname()
   const { isTransitioning } = useTransition()
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen)
-  }
+  const toggleMenu = () => setIsOpen((prev) => !prev)
+  const closeMenu = () => setIsOpen(false)
+  const isActive = (path: string) => pathname === path
 
-  const closeMenu = () => {
-    setIsOpen(false)
-  }
-
-  const isActive = (path: string) => {
-    return pathname === path
-  }
+  const navItems = [
+    { href: "/", label: "HOME" },
+    { href: "/about", label: "ABOUT" },
+    { href: "/projects", label: "PROJECTS" },
+    { href: "/contact", label: "CONTACT" },
+  ]
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-indigo-950/80 backdrop-blur-sm border-b border-cyan-500/30">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-indigo-950/90 backdrop-blur border-b border-cyan-400/30">
       <div className="container flex items-center justify-between h-16 px-4 mx-auto">
         <Link href="/" className="flex items-center space-x-2" onClick={closeMenu}>
           <RetroGlitch>
@@ -35,97 +32,59 @@ export default function Navigation() {
           </RetroGlitch>
         </Link>
 
-        <nav className="hidden md:flex md:items-center md:space-x-6">
-          <Link
-            href="/"
-            className={`text-sm font-medium transition-colors font-pixel ${
-              isActive("/") ? "text-pink-400" : "text-gray-300 hover:text-pink-400"
-            } ${isTransitioning ? "pointer-events-none" : ""}`}
-          >
-            HOME
-          </Link>
-          <Link
-            href="/about"
-            className={`text-sm font-medium transition-colors font-pixel ${
-              isActive("/about") ? "text-yellow-400" : "text-gray-300 hover:text-yellow-400"
-            } ${isTransitioning ? "pointer-events-none" : ""}`}
-          >
-            ABOUT
-          </Link>
-          <Link
-            href="/projects"
-            className={`text-sm font-medium transition-colors font-pixel ${
-              isActive("/projects") ? "text-green-400" : "text-gray-300 hover:text-green-400"
-            } ${isTransitioning ? "pointer-events-none" : ""}`}
-          >
-            PROJECTS
-          </Link>
-          <Link
-            href="/contact"
-            className={`text-sm font-medium transition-colors font-pixel ${
-              isActive("/contact") ? "text-cyan-400" : "text-gray-300 hover:text-cyan-400"
-            } ${isTransitioning ? "pointer-events-none" : ""}`}
-          >
-            CONTACT
-          </Link>
+        {/* Desktop Nav */}
+        <nav className="hidden md:flex md:items-center md:space-x-6 font-pixel text-sm">
+          {navItems.map(({ href, label }) => (
+            <Link
+              key={href}
+              href={href}
+              className={`transition-colors ${
+                isActive(href) ? "text-cyan-400" : "text-gray-300 hover:text-cyan-400"
+              } ${isTransitioning ? "pointer-events-none" : ""}`}
+            >
+              {label}
+            </Link>
+          ))}
         </nav>
 
-        <Button
-          variant="ghost"
-          size="icon"
-          className="md:hidden text-gray-300 hover:text-white hover:bg-transparent"
+        {/* Hamburger Menu */}
+        <button
+          className="md:hidden text-gray-300 hover:text-white focus:outline-none"
           onClick={toggleMenu}
           disabled={isTransitioning}
         >
           {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </Button>
+        </button>
       </div>
 
-      {isOpen && (
-        <div className="fixed inset-0 z-40 flex flex-col pt-16 bg-indigo-950/95 md:hidden">
-          <nav className="flex flex-col items-center justify-center flex-1 space-y-8">
+      {/* Mobile Nav */}
+      <div
+        className={`fixed top-0 right-0 w-3/4 max-w-sm h-full bg-indigo-950 border-l border-cyan-500 shadow-lg z-40 transform transition-transform duration-300 ${
+          isOpen ? "translate-x-0" : "translate-x-full"
+        } md:hidden`}
+      >
+        <div className="flex flex-col p-6 space-y-6 font-pixel bg-black/70 text-lg text-gray-300">
+          {navItems.map(({ href, label }) => (
             <Link
-              href="/"
-              className={`flex items-center text-xl font-medium text-gray-300 transition-colors hover:text-pink-400 font-pixel ${
-                isTransitioning ? "pointer-events-none" : ""
-              }`}
+              key={href}
+              href={href}
               onClick={closeMenu}
-            >
-              <Home className="w-5 h-5 mr-2" />
-              HOME
-            </Link>
-            <Link
-              href="/about"
-              className={`flex items-center text-xl font-medium text-gray-300 transition-colors hover:text-yellow-400 font-pixel ${
-                isTransitioning ? "pointer-events-none" : ""
+              className={`hover:text-cyan-400 transition-colors ${
+                isActive(href) ? "text-cyan-400" : ""
               }`}
-              onClick={closeMenu}
             >
-              <User className="w-5 h-5 mr-2" />
-              ABOUT
+              {label}
             </Link>
-            <Link
-              href="/projects"
-              className={`flex items-center text-xl font-medium text-gray-300 transition-colors hover:text-green-400 font-pixel ${
-                isTransitioning ? "pointer-events-none" : ""
-              }`}
-              onClick={closeMenu}
-            >
-              <Code className="w-5 h-5 mr-2" />
-              PROJECTS
-            </Link>
-            <Link
-              href="/contact"
-              className={`flex items-center text-xl font-medium text-gray-300 transition-colors hover:text-cyan-400 font-pixel ${
-                isTransitioning ? "pointer-events-none" : ""
-              }`}
-              onClick={closeMenu}
-            >
-              <Mail className="w-5 h-5 mr-2" />
-              CONTACT
-            </Link>
-          </nav>
+          ))}
         </div>
+      </div>
+
+      {/* Backdrop */}
+      {isOpen && (
+        <div
+          className="fixed inset-0 z-30 bg-black/50 backdrop-blur-3xl md:hidden"
+          onClick={closeMenu}
+        ></div>
       )}
     </header>
   )

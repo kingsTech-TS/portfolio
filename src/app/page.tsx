@@ -1,103 +1,123 @@
-import Image from "next/image";
+"use client"
+
+import { useState } from "react"
+import Link from "next/link"
+import { Mail, User, Code, ChevronRight } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import RetroHeading from "@/components/retro-heading"
+import PixelAvatar from "@/components/pixel-avatar"
+import { RetroGlitch } from "@/components/retro-glitch"
+import { ScanLines } from "@/components/scan-lines"
+import { NeonText } from "@/components/neon-text"
+import BootSequence from "@/components/boot-sequence"
+import DigitalRain from "@/components/digital-rain"
+import RainToggle from "@/components/rain-toggle"
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const [showRain, setShowRain] = useState(true)
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  return (
+    <main className="relative min-h-screen overflow-hidden bg-gradient-to-b from-purple-900 via-indigo-900 to-blue-900">
+      <BootSequence />
+      <ScanLines />
+      {showRain && <DigitalRain color="#00ff9b" speed={0.8} density={1.2} opacity={0.1} />}
+      <RainToggle onToggle={setShowRain} initialState={showRain} />
+
+      <div className="container relative z-10 px-4 py-16 mx-auto">
+        <div className="grid items-center grid-cols-1 gap-8 md:grid-cols-2">
+          <div className="flex flex-col space-y-6">
+            <div className="inline-block">
+              <RetroGlitch>
+                <span className="text-lg font-bold text-green-400 font-pixel">Hello World_</span>
+              </RetroGlitch>
+            </div>
+
+            <RetroHeading>
+              <NeonText color="pink">king&#39;s</NeonText>
+              <span className="text-white">Tech</span>
+              <span className="text-yellow-400">_</span>
+            </RetroHeading>
+
+            <p className="text-xl text-cyan-300 font-vt323">
+              I create <span className="text-yellow-400">cool, responsive</span> web experiences with{" "}
+              <span className="text-green-400">animated designs</span> and modern technologies.
+            </p>
+
+            <div className="flex flex-wrap gap-4 pt-4">
+              <Link href="/projects" className="relative z-20">
+                <Button variant="retro" className="relative z-20">
+                  <span>View Projects</span>
+                  <Code className="w-4 h-4 ml-2" />
+                </Button>
+              </Link>
+
+              <Link href="/contact" className="relative z-20">
+                <Button variant="retroPink" className="relative z-20">
+                  <span>Contact Me</span>
+                  <Mail className="w-4 h-4 ml-2" />
+                </Button>
+              </Link>
+            </div>
+          </div>
+
+          <div className="flex items-center justify-center">
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-pink-500 to-purple-500 rounded-lg blur-xl opacity-50 animate-pulse"></div>
+              <div className="relative p-1 overflow-hidden border-4 border-cyan-400 rounded-lg shadow-lg bg-indigo-950">
+                <PixelAvatar />
+              </div>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+
+        <div className="grid grid-cols-1 gap-8 mt-24 md:grid-cols-3">
+          <Link href="/about" className="group">
+            <div className="p-6 transition-all border-2 border-yellow-500 rounded-lg shadow-lg bg-indigo-950/50 hover:bg-indigo-900/70 hover:shadow-yellow-500/20">
+              <div className="flex items-center mb-4 space-x-2">
+                <User className="w-6 h-6 text-yellow-400" />
+                <h2 className="text-xl font-bold text-yellow-400 font-pixel">About Me</h2>
+              </div>
+              <p className="text-gray-300 font-vt323">
+                Learn about my journey, skills, and experience in the digital realm.
+              </p>
+              <div className="flex items-center mt-4 text-yellow-400 group-hover:translate-x-2 transition-transform">
+                <span className="text-sm font-bold">Explore</span>
+                <ChevronRight className="w-4 h-4 ml-1" />
+              </div>
+            </div>
+          </Link>
+
+          <Link href="/projects" className="group">
+            <div className="p-6 transition-all border-2 border-green-500 rounded-lg shadow-lg bg-indigo-950/50 hover:bg-indigo-900/70 hover:shadow-green-500/20">
+              <div className="flex items-center mb-4 space-x-2">
+                <Code className="w-6 h-6 text-green-400" />
+                <h2 className="text-xl font-bold text-green-400 font-pixel">Projects</h2>
+              </div>
+              <p className="text-gray-300 font-vt323">Check out my latest work and the technologies I've mastered.</p>
+              <div className="flex items-center mt-4 text-green-400 group-hover:translate-x-2 transition-transform">
+                <span className="text-sm font-bold">Discover</span>
+                <ChevronRight className="w-4 h-4 ml-1" />
+              </div>
+            </div>
+          </Link>
+
+          <Link href="/contact" className="group">
+            <div className="p-6 transition-all border-2 border-pink-500 rounded-lg shadow-lg bg-indigo-950/50 hover:bg-indigo-900/70 hover:shadow-pink-500/20">
+              <div className="flex items-center mb-4 space-x-2">
+                <Mail className="w-6 h-6 text-pink-400" />
+                <h2 className="text-xl font-bold text-pink-400 font-pixel">Contact</h2>
+              </div>
+              <p className="text-gray-300 font-vt323">
+                Get in touch for collaborations, opportunities, or just to say hello.
+              </p>
+              <div className="flex items-center mt-4 text-pink-400 group-hover:translate-x-2 transition-transform">
+                <span className="text-sm font-bold">Connect</span>
+                <ChevronRight className="w-4 h-4 ml-1" />
+              </div>
+            </div>
+          </Link>
+        </div>
+      </div>
+    </main>
+  )
 }

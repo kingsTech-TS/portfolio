@@ -69,8 +69,10 @@ export default function ContactPage() {
         </Link>
 
         <RetroHeading>
+        <RetroGlitch>
           <NeonText color="pink">GET</NeonText>
           <span className="text-white">_IN_TOUCH</span>
+          </RetroGlitch>
         </RetroHeading>
 
         <div className="grid grid-cols-1 gap-12 mt-12 lg:grid-cols-2">

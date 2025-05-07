@@ -10,6 +10,7 @@ import { TimelineItem } from "@/components/timeline-item"
 import { SkillBadge } from "@/components/skill-badge"
 import DigitalRain from "@/components/digital-rain"
 import RainToggle from "@/components/rain-toggle"
+import { RetroGlitch } from "@/components/retro-glitch"
 
 export default function AboutPage() {
   const [showRain, setShowRain] = useState(true)
@@ -24,10 +25,14 @@ export default function AboutPage() {
           <span className="font-pixel">Back to Home</span>
         </Link>
 
+ 
         <RetroHeading>
+        <RetroGlitch>
           <NeonText color="yellow">ABOUT</NeonText>
           <span className="text-white">_ME</span>
+          </RetroGlitch>
         </RetroHeading>
+       
 
         <div className="grid grid-cols-1 gap-12 mt-12 lg:grid-cols-3">
           <div className="lg:col-span-2">
@@ -35,13 +40,13 @@ export default function AboutPage() {
               <h2 className="mb-6 text-2xl font-bold text-cyan-400 font-pixel">My Story</h2>
               <div className="space-y-4 text-gray-300 font-vt323">
                 <p>
-                  I'm a passionate web developer with a love for creating immersive digital experiences. My journey
+                  I'm a passionate Software developer with a love for creating immersive digital experiences. My journey
                   began in the early days of the web, and I've evolved alongside the technologies that power our digital
                   world.
                 </p>
                 <p>
                   With a background in both design and development, I bring a unique perspective to every project. I
-                  believe in the perfect balance between form and function, creating websites that not only look amazing
+                  believe in the perfect balance between form and function, creating websites and web applications that not only look amazing
                   but perform flawlessly.
                 </p>
                 <p>
@@ -59,15 +64,15 @@ export default function AboutPage() {
                   date="2024 - Present"
                   title="Senior Frontend Developer"
                   company="JeoLinks INC."
-                  description="Leading the frontend team in developing modern web applications using React, Next.js, and TypeScript."
+                  description="Leading the frontend team in developing modern Software applications using React.js, Next.js, JavaScript and TypeScript."
                   color="pink"
                 />
 
                 <TimelineItem
                   icon={<Award className="w-5 h-5" />}
                   date="2023 - 2024"
-                  title="JavaScript Certified Developer"
-                  company="Digital Solutions"
+                  title="JavaScript Certified/Software Developer"
+                  company="Techub EKSU"
                   description="Earned certification in JavaScript, enhancing frontend development skills and building dynamic, interactive web applications."
                   color="cyan"
                 />

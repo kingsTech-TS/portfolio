@@ -45,14 +45,14 @@ export default function Home() {
 
             <div className="flex flex-wrap gap-4 pt-4">
               <Link href="/projects" className="relative z-20">
-                <Button variant="retro" className="relative z-20">
+                <Button variant="retro" className="relative z-20 cursor-pointer">
                   <span>View Projects</span>
                   <Code className="w-4 h-4 ml-2" />
                 </Button>
               </Link>
 
               <Link href="/contact" className="relative z-20">
-                <Button variant="retroPink" className="relative z-20">
+                <Button variant="retroPink" className="relative z-20 cursor-pointer">
                   <span>Contact Me</span>
                   <Mail className="w-4 h-4 ml-2" />
                 </Button>

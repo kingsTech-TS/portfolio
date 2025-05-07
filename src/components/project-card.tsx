@@ -23,37 +23,37 @@ export default function ProjectCard({ title, description, image, tags, demoUrl, 
       border: "border-pink-500",
       text: "text-pink-400",
       hover: "group-hover:bg-pink-950/50",
-      button: "border-pink-500 bg-transparent text-pink-400 hover:bg-pink-950/50 hover:text-pink-300",
+      button: "border-pink-500 bg-transparent text-pink-400 hover:bg-pink-950/50 hover:text-pink-300 cursor-pointer",
     },
     cyan: {
       border: "border-cyan-500",
       text: "text-cyan-400",
       hover: "group-hover:bg-cyan-950/50",
-      button: "border-cyan-500 bg-transparent text-cyan-400 hover:bg-cyan-950/50 hover:text-cyan-300",
+      button: "border-cyan-500 bg-transparent text-cyan-400 hover:bg-cyan-950/50 hover:text-cyan-300 cursor-pointer",
     },
     yellow: {
       border: "border-yellow-500",
       text: "text-yellow-400",
       hover: "group-hover:bg-yellow-950/50",
-      button: "border-yellow-500 bg-transparent text-yellow-400 hover:bg-yellow-950/50 hover:text-yellow-300",
+      button: "border-yellow-500 bg-transparent text-yellow-400 hover:bg-yellow-950/50 hover:text-yellow-300 cursor-pointer",
     },
     green: {
       border: "border-green-500",
       text: "text-green-400",
       hover: "group-hover:bg-green-950/50",
-      button: "border-green-500 bg-transparent text-green-400 hover:bg-green-950/50 hover:text-green-300",
+      button: "border-green-500 bg-transparent text-green-400 hover:bg-green-950/50 hover:text-green-300 cursor-pointer",
     },
     purple: {
       border: "border-purple-500",
       text: "text-purple-400",
       hover: "group-hover:bg-purple-950/50",
-      button: "border-purple-500 bg-transparent text-purple-400 hover:bg-purple-950/50 hover:text-purple-300",
+      button: "border-purple-500 bg-transparent text-purple-400 hover:bg-purple-950/50 hover:text-purple-300 cursor-pointer",
     },
     orange: {
       border: "border-orange-500",
       text: "text-orange-400",
       hover: "group-hover:bg-orange-950/50",
-      button: "border-orange-500 bg-transparent text-orange-400 hover:bg-orange-950/50 hover:text-orange-300",
+      button: "border-orange-500 bg-transparent text-orange-400 hover:bg-orange-950/50 hover:text-orange-300 cursor-pointer",
     },
   }
 
@@ -105,8 +105,8 @@ export default function ProjectCard({ title, description, image, tags, demoUrl, 
           <a href={codeUrl} target="_blank" rel="noopener noreferrer" className="relative z-20">
             <Button
               variant="outline"
-              className="border-gray-700 text-gray-300 hover:bg-gray-800/50 hover:text-white relative z-20"
-            >
+              className="border-gray-700 text-gray-300 hover:bg-gray-800/50 hover:text-white relative z-20 cursor-pointer"
+            >   
               <span className="mr-2">Code</span>
               <Github className="w-4 h-4" />
             </Button>

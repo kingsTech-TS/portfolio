@@ -9,6 +9,7 @@ import { NeonText } from "@/components/neon-text"
 import ProjectCard from "@/components/project-card"
 import DigitalRain from "@/components/digital-rain"
 import RainToggle from "@/components/rain-toggle"
+import { RetroGlitch } from "@/components/retro-glitch"
 
 export default function ProjectsPage() {
   const [showRain, setShowRain] = useState(true)
@@ -24,8 +25,10 @@ export default function ProjectsPage() {
         </Link>
 
         <RetroHeading>
+        <RetroGlitch>
           <NeonText color="green">MY</NeonText>
           <span className="text-white">_PROJECTS</span>
+          </RetroGlitch>
         </RetroHeading>
 
         <p className="max-w-2xl mt-4 mb-12 text-xl text-gray-300 font-vt323">
@@ -34,22 +37,22 @@ export default function ProjectsPage() {
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           <ProjectCard
-            title="RetroWave Music App"
+            title="Birthday website"
             description="A music streaming application with a synthwave aesthetic, built with React and the Spotify API."
             image="/placeholder.svg?height=300&width=400"
-            tags={["React", "Spotify API", "Styled Components"]}
+            tags={["Next.js", "Canvas", "TailwindCSS"]}
             demoUrl="#"
-            codeUrl="#"
+            codeUrl="https://github.com/theKingSi/my-birthday-web21"
             color="pink"
           />
 
           <ProjectCard
-            title="Pixel Art Creator"
+            title="CGPA Calculator"
             description="An interactive tool for creating and sharing pixel art, with real-time collaboration features."
-            image="/placeholder.svg?height=300&width=400"
-            tags={["Next.js", "Canvas API", "Socket.io"]}
-            demoUrl="#"
-            codeUrl="#"
+            image="/CGPA.png?height=300&width=400"
+            tags={["HTML", "CSS", "javaScript"]}
+            demoUrl="https://thekingsi.github.io/CGPA-Calculator/"
+            codeUrl="https://github.com/theKingSi/CGPA-Calculator"
             color="cyan"
           />
 

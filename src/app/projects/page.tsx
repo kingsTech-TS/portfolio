@@ -1,54 +1,48 @@
-"use client"
-
-import { useState } from "react"
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 import RetroHeading from "@/components/retro-heading"
 import { ScanLines } from "@/components/scan-lines"
 import { NeonText } from "@/components/neon-text"
 import ProjectCard from "@/components/project-card"
-import DigitalRain from "@/components/digital-rain"
-import RainToggle from "@/components/rain-toggle"
 import { RetroGlitch } from "@/components/retro-glitch"
 
 export default function ProjectsPage() {
-  const [showRain, setShowRain] = useState(true)
   return (
     <main className="relative min-h-screen overflow-hidden bg-gradient-to-b from-purple-900 via-indigo-900 to-blue-900">
       <ScanLines />
-      {showRain && <DigitalRain color="#00ff9b" speed={0.8} density={1.2} opacity={0.1} />}
-      <RainToggle onToggle={setShowRain} initialState={showRain} />
-      <div className="container relative z-10 px-4 py-16 mx-auto">
-        <Link href="/" className="inline-flex items-center mb-8 text-cyan-300 hover:text-cyan-400 transition-colors">
-          <ArrowLeft className="w-4 h-4 mr-2" />
-          <span className="font-pixel">Back to Home</span>
+      <div className="container relative z-10 px-4 py-8 mx-auto max-w-7xl sm:py-12 md:py-16">
+        <Link
+          href="/"
+          className="inline-flex items-center mb-6 text-cyan-300 hover:text-cyan-400 transition-colors sm:mb-8"
+        >
+          <ArrowLeft className="w-3 h-3 mr-1 sm:w-4 sm:h-4 sm:mr-2" />
+          <span className="text-sm font-pixel sm:text-base">Back to Home</span>
         </Link>
 
         <RetroHeading>
-        <RetroGlitch>
-          <NeonText color="green">MY</NeonText>
-          <span className="text-white">_PROJECTS</span>
+          <RetroGlitch>
+            <NeonText color="green">MY</NeonText>
+            <span className="text-white">_PROJECTS</span>
           </RetroGlitch>
         </RetroHeading>
 
-        <p className="max-w-2xl mt-4 mb-12 text-xl text-gray-300 font-vt323">
+        <p className="max-w-2xl mt-3 mb-8 text-base text-gray-300 font-vt323 sm:text-lg md:text-xl sm:mt-4 sm:mb-10 md:mb-12">
           Check out some of my recent work. Each project represents a unique challenge and solution.
         </p>
 
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 sm:gap-8">
           <ProjectCard
             title="Birthday website"
-            description="A music streaming application with a synthwave aesthetic, built with React and the Spotify API."
-            image="/placeholder.svg?height=300&width=400"
+            description="A fun and interactive birthday-themed website featuring animations and personalized messages."
+            image="/birthday.png?height=300&width=400"
             tags={["Next.js", "Canvas", "TailwindCSS"]}
             demoUrl="#"
             codeUrl="https://github.com/theKingSi/my-birthday-web21"
             color="pink"
           />
-
           <ProjectCard
             title="CGPA Calculator"
-            description="An interactive tool for creating and sharing pixel art, with real-time collaboration features."
+            description="A simple and intuitive web app to calculate CGPA based on course grades and credit units."
             image="/CGPA.png?height=300&width=400"
             tags={["HTML", "CSS", "javaScript"]}
             demoUrl="https://thekingsi.github.io/CGPA-Calculator/"

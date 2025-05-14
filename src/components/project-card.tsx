@@ -23,37 +23,37 @@ export default function ProjectCard({ title, description, image, tags, demoUrl, 
       border: "border-pink-500",
       text: "text-pink-400",
       hover: "group-hover:bg-pink-950/50",
-      button: "border-pink-500 bg-transparent text-pink-400 hover:bg-pink-950/50 hover:text-pink-300 cursor-pointer",
+      button: "border-pink-500 bg-transparent text-pink-400 hover:bg-pink-950/50 hover:text-pink-300",
     },
     cyan: {
       border: "border-cyan-500",
       text: "text-cyan-400",
       hover: "group-hover:bg-cyan-950/50",
-      button: "border-cyan-500 bg-transparent text-cyan-400 hover:bg-cyan-950/50 hover:text-cyan-300 cursor-pointer",
+      button: "border-cyan-500 bg-transparent text-cyan-400 hover:bg-cyan-950/50 hover:text-cyan-300",
     },
     yellow: {
       border: "border-yellow-500",
       text: "text-yellow-400",
       hover: "group-hover:bg-yellow-950/50",
-      button: "border-yellow-500 bg-transparent text-yellow-400 hover:bg-yellow-950/50 hover:text-yellow-300 cursor-pointer",
+      button: "border-yellow-500 bg-transparent text-yellow-400 hover:bg-yellow-950/50 hover:text-yellow-300",
     },
     green: {
       border: "border-green-500",
       text: "text-green-400",
       hover: "group-hover:bg-green-950/50",
-      button: "border-green-500 bg-transparent text-green-400 hover:bg-green-950/50 hover:text-green-300 cursor-pointer",
+      button: "border-green-500 bg-transparent text-green-400 hover:bg-green-950/50 hover:text-green-300",
     },
     purple: {
       border: "border-purple-500",
       text: "text-purple-400",
       hover: "group-hover:bg-purple-950/50",
-      button: "border-purple-500 bg-transparent text-purple-400 hover:bg-purple-950/50 hover:text-purple-300 cursor-pointer",
+      button: "border-purple-500 bg-transparent text-purple-400 hover:bg-purple-950/50 hover:text-purple-300",
     },
     orange: {
       border: "border-orange-500",
       text: "text-orange-400",
       hover: "group-hover:bg-orange-950/50",
-      button: "border-orange-500 bg-transparent text-orange-400 hover:bg-orange-950/50 hover:text-orange-300 cursor-pointer",
+      button: "border-orange-500 bg-transparent text-orange-400 hover:bg-orange-950/50 hover:text-orange-300",
     },
   }
 
@@ -79,36 +79,36 @@ export default function ProjectCard({ title, description, image, tags, demoUrl, 
         ></div>
       </div>
 
-      <div className="p-6">
-        <h3 className={`mb-2 text-xl font-bold font-pixel ${colorClasses[color].text}`}>{title}</h3>
-        <p className="mb-4 text-gray-300 font-vt323">{description}</p>
+      <div className="p-4 sm:p-6">
+        <h3 className={`mb-2 text-lg font-bold font-pixel ${colorClasses[color].text} sm:text-xl`}>{title}</h3>
+        <p className="mb-3 text-sm text-gray-300 font-vt323 sm:text-base sm:mb-4">{description}</p>
 
-        <div className="flex flex-wrap gap-2 mb-6">
+        <div className="flex flex-wrap gap-1 mb-4 sm:gap-2 sm:mb-6">
           {tags.map((tag, index) => (
             <span
               key={index}
-              className={`inline-block px-2 py-1 text-xs font-medium border ${colorClasses[color].border} rounded-md ${colorClasses[color].text} font-vt323`}
+              className={`inline-block px-2 py-0.5 text-xs font-medium border ${colorClasses[color].border} rounded-md ${colorClasses[color].text} font-vt323 sm:px-2 sm:py-1`}
             >
               {tag}
             </span>
           ))}
         </div>
 
-        <div className="flex flex-wrap gap-3">
+        <div className="flex flex-wrap gap-2 sm:gap-3">
           <a href={demoUrl} target="_blank" rel="noopener noreferrer" className="relative z-20">
-            <Button className={`border-2 ${colorClasses[color].button} relative z-20`}>
-              <span className="mr-2">Demo</span>
-              <ExternalLink className="w-4 h-4" />
+            <Button className={`border-2 ${colorClasses[color].button} relative z-20 text-xs sm:text-sm`}>
+              <span className="mr-1 sm:mr-2">Demo</span>
+              <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4" />
             </Button>
           </a>
 
           <a href={codeUrl} target="_blank" rel="noopener noreferrer" className="relative z-20">
             <Button
               variant="outline"
-              className="border-gray-700 text-gray-300 hover:bg-gray-800/50 hover:text-white relative z-20 cursor-pointer"
-            >   
-              <span className="mr-2">Code</span>
-              <Github className="w-4 h-4" />
+              className="border-gray-700 text-gray-300 hover:bg-gray-800/50 hover:text-white relative z-20 text-xs sm:text-sm"
+            >
+              <span className="mr-1 sm:mr-2">Code</span>
+              <Github className="w-3 h-3 sm:w-4 sm:h-4" />
             </Button>
           </a>
         </div>

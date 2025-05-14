@@ -23,36 +23,36 @@ export default function Home() {
       {showRain && <DigitalRain color="#00ff9b" speed={0.8} density={1.2} opacity={0.1} />}
       <RainToggle onToggle={setShowRain} initialState={showRain} />
 
-      <div className="container relative z-10 px-4 py-16 mx-auto">
+      <div className="container relative z-10 px-4 py-8 mx-auto max-w-7xl sm:py-12 md:py-16">
         <div className="grid items-center grid-cols-1 gap-8 md:grid-cols-2">
-          <div className="flex flex-col space-y-6">
+          <div className="flex flex-col space-y-4 sm:space-y-6">
             <div className="inline-block">
               <RetroGlitch>
-                <span className="text-lg font-bold text-green-400 font-pixel">Hello World_</span>
+                <span className="text-base font-bold text-green-400 font-pixel sm:text-lg">Hello World_</span>
               </RetroGlitch>
             </div>
 
             <RetroHeading>
-              <NeonText color="pink">king&#39;s</NeonText>
-              <span className="text-white">Tech</span>
+              <NeonText color="pink">DEV</NeonText>
+              <span className="text-white">ELOPER</span>
               <span className="text-yellow-400">_</span>
             </RetroHeading>
 
-            <p className="text-xl text-cyan-300 font-vt323">
-              I create <span className="text-yellow-400">cool, responsive</span> web experiences with{" "}
-              <span className="text-green-400">animated designs</span> and modern technologies.
+            <p className="text-lg text-cyan-300 font-vt323 sm:text-xl">
+              I create <span className="text-yellow-400">pixel-perfect</span> web experiences with{" "}
+              <span className="text-green-400">modern</span> technologies.
             </p>
 
-            <div className="flex flex-wrap gap-4 pt-4">
+            <div className="flex flex-wrap gap-3 pt-2 sm:gap-4 sm:pt-4">
               <Link href="/projects" className="relative z-20">
-                <Button variant="retro" className="relative z-20 cursor-pointer">
+                <Button variant="retro" className="relative z-20 text-sm sm:text-base">
                   <span>View Projects</span>
                   <Code className="w-4 h-4 ml-2" />
                 </Button>
               </Link>
 
               <Link href="/contact" className="relative z-20">
-                <Button variant="retroPink" className="relative z-20 cursor-pointer">
+                <Button variant="retroPink" className="relative z-20 text-sm sm:text-base">
                   <span>Contact Me</span>
                   <Mail className="w-4 h-4 ml-2" />
                 </Button>
@@ -60,8 +60,8 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="flex items-center justify-center">
-            <div className="relative">
+          <div className="flex items-center justify-center mt-4 md:mt-0">
+            <div className="relative w-full max-w-[280px] sm:max-w-[320px] md:max-w-[360px] lg:max-w-[400px]">
               <div className="absolute inset-0 bg-gradient-to-r from-pink-500 to-purple-500 rounded-lg blur-xl opacity-50 animate-pulse"></div>
               <div className="relative p-1 overflow-hidden border-4 border-cyan-400 rounded-lg shadow-lg bg-indigo-950">
                 <PixelAvatar />
@@ -70,53 +70,65 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 gap-8 mt-24 md:grid-cols-3">
-          <Link href="/about" className="group">
-            <div className="p-6 transition-all border-2 border-yellow-500 rounded-lg shadow-lg bg-indigo-950/50 hover:bg-indigo-900/70 hover:shadow-yellow-500/20">
-              <div className="flex items-center mb-4 space-x-2">
-                <User className="w-6 h-6 text-yellow-400" />
-                <h2 className="text-xl font-bold text-yellow-400 font-pixel">About Me</h2>
-              </div>
-              <p className="text-gray-300 font-vt323">
-                Learn about my journey, skills, and experience in the digital realm.
-              </p>
-              <div className="flex items-center mt-4 text-yellow-400 group-hover:translate-x-2 transition-transform">
-                <span className="text-sm font-bold">Explore</span>
-                <ChevronRight className="w-4 h-4 ml-1" />
-              </div>
-            </div>
-          </Link>
-
-          <Link href="/projects" className="group">
-            <div className="p-6 transition-all border-2 border-green-500 rounded-lg shadow-lg bg-indigo-950/50 hover:bg-indigo-900/70 hover:shadow-green-500/20">
-              <div className="flex items-center mb-4 space-x-2">
-                <Code className="w-6 h-6 text-green-400" />
-                <h2 className="text-xl font-bold text-green-400 font-pixel">Projects</h2>
-              </div>
-              <p className="text-gray-300 font-vt323">Check out my latest work and the technologies I've mastered.</p>
-              <div className="flex items-center mt-4 text-green-400 group-hover:translate-x-2 transition-transform">
-                <span className="text-sm font-bold">Discover</span>
-                <ChevronRight className="w-4 h-4 ml-1" />
-              </div>
-            </div>
-          </Link>
-
-          <Link href="/contact" className="group">
-            <div className="p-6 transition-all border-2 border-pink-500 rounded-lg shadow-lg bg-indigo-950/50 hover:bg-indigo-900/70 hover:shadow-pink-500/20">
-              <div className="flex items-center mb-4 space-x-2">
-                <Mail className="w-6 h-6 text-pink-400" />
-                <h2 className="text-xl font-bold text-pink-400 font-pixel">Contact</h2>
-              </div>
-              <p className="text-gray-300 font-vt323">
-                Get in touch for collaborations, opportunities, or just to say hello.
-              </p>
-              <div className="flex items-center mt-4 text-pink-400 group-hover:translate-x-2 transition-transform">
-                <span className="text-sm font-bold">Connect</span>
-                <ChevronRight className="w-4 h-4 ml-1" />
-              </div>
-            </div>
-          </Link>
+        <div className="grid grid-cols-1 gap-4 mt-16 sm:gap-6 sm:mt-20 md:grid-cols-3 md:mt-24">
+  {/* About Me Card */}
+  <Link href="/about" className="group h-full">
+    <div className="flex flex-col justify-between h-full p-4 transition-all border-2 border-yellow-500 rounded-lg shadow-lg sm:p-6 bg-indigo-950/50 hover:bg-indigo-900/70 hover:shadow-yellow-500/20">
+      <div>
+        <div className="flex items-center mb-3 space-x-2 sm:mb-4">
+          <User className="w-5 h-5 sm:w-6 sm:h-6 text-yellow-400" />
+          <h2 className="text-lg font-bold text-yellow-400 font-pixel sm:text-xl">About Me</h2>
         </div>
+        <p className="text-sm text-gray-300 font-vt323 sm:text-base">
+          Learn about my journey, skills, and experience in the digital realm.
+        </p>
+      </div>
+      <div className="flex items-center mt-3 text-yellow-400 group-hover:translate-x-2 transition-transform sm:mt-4">
+        <span className="text-xs font-bold sm:text-sm">Explore</span>
+        <ChevronRight className="w-3 h-3 ml-1 sm:w-4 sm:h-4" />
+      </div>
+    </div>
+  </Link>
+
+  {/* Projects Card */}
+  <Link href="/projects" className="group h-full">
+    <div className="flex flex-col justify-between h-full p-4 transition-all border-2 border-green-500 rounded-lg shadow-lg sm:p-6 bg-indigo-950/50 hover:bg-indigo-900/70 hover:shadow-green-500/20">
+      <div>
+        <div className="flex items-center mb-3 space-x-2 sm:mb-4">
+          <Code className="w-5 h-5 sm:w-6 sm:h-6 text-green-400" />
+          <h2 className="text-lg font-bold text-green-400 font-pixel sm:text-xl">Projects</h2>
+        </div>
+        <p className="text-sm text-gray-300 font-vt323 sm:text-base">
+          Check out my latest work and the technologies I've mastered.
+        </p>
+      </div>
+      <div className="flex items-center mt-3 text-green-400 group-hover:translate-x-2 transition-transform sm:mt-4">
+        <span className="text-xs font-bold sm:text-sm">Discover</span>
+        <ChevronRight className="w-3 h-3 ml-1 sm:w-4 sm:h-4" />
+      </div>
+    </div>
+  </Link>
+
+  {/* Contact Card */}
+  <Link href="/contact" className="group h-full">
+    <div className="flex flex-col justify-between h-full p-4 transition-all border-2 border-pink-500 rounded-lg shadow-lg sm:p-6 bg-indigo-950/50 hover:bg-indigo-900/70 hover:shadow-pink-500/20">
+      <div>
+        <div className="flex items-center mb-3 space-x-2 sm:mb-4">
+          <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-pink-400" />
+          <h2 className="text-lg font-bold text-pink-400 font-pixel sm:text-xl">Contact</h2>
+        </div>
+        <p className="text-sm text-gray-300 font-vt323 sm:text-base">
+          Get in touch for collaborations, opportunities, or just to say hello.
+        </p>
+      </div>
+      <div className="flex items-center mt-3 text-pink-400 group-hover:translate-x-2 transition-transform sm:mt-4">
+        <span className="text-xs font-bold sm:text-sm">Connect</span>
+        <ChevronRight className="w-3 h-3 ml-1 sm:w-4 sm:h-4" />
+      </div>
+    </div>
+  </Link>
+</div>
+
       </div>
     </main>
   )

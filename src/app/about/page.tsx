@@ -1,47 +1,44 @@
 "use client"
 
-import { useState } from "react"
 import Link from "next/link"
-import { ArrowLeft, Award, Briefcase, GraduationCap, Laptop, Laptop2, School, School2 } from "lucide-react"
+import { ArrowLeft, Award, Briefcase, Laptop, School2 } from "lucide-react"
 import RetroHeading from "@/components/retro-heading"
 import { ScanLines } from "@/components/scan-lines"
 import { NeonText } from "@/components/neon-text"
 import { TimelineItem } from "@/components/timeline-item"
 import { SkillBadge } from "@/components/skill-badge"
-import DigitalRain from "@/components/digital-rain"
-import RainToggle from "@/components/rain-toggle"
 import { RetroGlitch } from "@/components/retro-glitch"
 
+
+
 export default function AboutPage() {
-  const [showRain, setShowRain] = useState(true)
   return (
     <main className="relative min-h-screen overflow-hidden bg-gradient-to-b from-purple-900 via-indigo-900 to-blue-900">
       <ScanLines />
-      {showRain && <DigitalRain color="#00ff9b" speed={0.8} density={1.2} opacity={0.1} />}
-      <RainToggle onToggle={setShowRain} initialState={showRain} />
-      <div className="container relative z-10 px-4 py-16 mx-auto">
-        <Link href="/" className="inline-flex items-center mb-8 text-cyan-300 hover:text-cyan-400 transition-colors">
-          <ArrowLeft className="w-4 h-4 mr-2" />
-          <span className="font-pixel">Back to Home</span>
+      <div className="container relative z-10 px-4 py-8 mx-auto max-w-7xl sm:py-12 md:py-16">
+        <Link
+          href="/"
+          className="inline-flex items-center mb-6 mt-7 text-cyan-300 hover:text-cyan-400 transition-colors sm:mb-8 "
+        >
+          <ArrowLeft className="w-3 h-3 mr-1 sm:w-4 sm:h-4 sm:mr-2" />
+          <span className="text-sm font-pixel sm:text-base">Back to Home</span>
         </Link>
 
- 
         <RetroHeading>
-        <RetroGlitch>
-          <NeonText color="yellow">ABOUT</NeonText>
-          <span className="text-white">_ME</span>
+          <RetroGlitch>
+            <NeonText color="yellow">ABOUT</NeonText>
+            <span className="text-white">_ME</span>
           </RetroGlitch>
         </RetroHeading>
-       
 
-        <div className="grid grid-cols-1 gap-12 mt-12 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-8 mt-8 lg:grid-cols-3 sm:mt-10 md:mt-12 sm:gap-10 md:gap-12">
           <div className="lg:col-span-2">
-            <div className="p-6 border-2 border-cyan-500 rounded-lg shadow-lg bg-indigo-950/50">
-              <h2 className="mb-6 text-2xl font-bold text-cyan-400 font-pixel">My Story</h2>
-              <div className="space-y-4 text-gray-300 font-vt323">
+            <div className="p-4 border-2 border-cyan-500 rounded-lg shadow-lg sm:p-6 bg-indigo-950/50">
+              <h2 className="mb-4 text-xl font-bold text-cyan-400 font-pixel sm:text-2xl sm:mb-6">My Story</h2>
+              <div className="space-y-3 text-sm text-gray-300 font-vt323 sm:text-base sm:space-y-4">
                 <p>
-                  I'm a passionate Software developer with a love for creating immersive digital experiences. My journey
-                  began in the early days of the web, and I've evolved alongside the technologies that power our digital
+                  I&rsquo;m a passionate Software developer with a love for creating immersive digital experiences. My journey
+                  began in the early days of the web, and I&rsquo;ve evolved alongside the technologies that power our digital
                   world.
                 </p>
                 <p>
@@ -56,10 +53,10 @@ export default function AboutPage() {
               </div>
             </div>
 
-            <div className="mt-12">
-              <h2 className="mb-6 text-2xl font-bold text-pink-400 font-pixel">My Journey</h2>
-              <div className="space-y-8">
-                <TimelineItem
+            <div className="mt-8 sm:mt-10 md:mt-12">
+              <h2 className="mb-4 text-xl font-bold text-pink-400 font-pixel sm:text-2xl sm:mb-6">My Journey</h2>
+              <div className="space-y-6 sm:space-y-8">
+                 <TimelineItem
                   icon={<Briefcase className="w-5 h-5" />}
                   date="2024 - Present"
                   title="Senior Frontend Developer"
@@ -98,14 +95,14 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div>
-            <div className="p-6 border-2 border-yellow-500 rounded-lg shadow-lg bg-indigo-950/50">
-              <h2 className="mb-6 text-2xl font-bold text-yellow-400 font-pixel">Skills</h2>
+          <div className="space-y-8">
+            <div className="p-4 border-2 border-yellow-500 rounded-lg shadow-lg sm:p-6 bg-indigo-950/50">
+              <h2 className="mb-4 text-xl font-bold text-yellow-400 font-pixel sm:text-2xl sm:mb-6">Skills</h2>
 
-              <div className="mb-6">
-                <h3 className="mb-3 text-lg font-bold text-white font-pixel">Frontend</h3>
+              <div className="mb-4 sm:mb-6">
+                <h3 className="mb-2 text-base font-bold text-white font-pixel sm:text-lg sm:mb-3">Frontend</h3>
                 <div className="flex flex-wrap gap-2">
-                  <SkillBadge name="React" color="cyan" />
+                 <SkillBadge name="React" color="cyan" />
                   <SkillBadge name="Next.js" color="white" />
                   <SkillBadge name="TypeScript" color="blue" />
                   <SkillBadge name="Tailwind CSS" color="silver" />
@@ -116,17 +113,17 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              <div className="mb-6">
-                <h3 className="mb-3 text-lg font-bold text-white font-pixel">Backend</h3>
+              <div className="mb-4 sm:mb-6">
+                <h3 className="mb-2 text-base font-bold text-white font-pixel sm:text-lg sm:mb-3">Backend</h3>
                 <div className="flex flex-wrap gap-2">
-                  <SkillBadge name="mySQL" color="rose" />
+                 <SkillBadge name="mySQL" color="rose" />
                 </div>
               </div>
 
-              <div className="mb-6">
-                <h3 className="mb-3 text-lg font-bold text-white font-pixel">Tools</h3>
+              <div className="mb-4 sm:mb-6">
+                <h3 className="mb-2 text-base font-bold text-white font-pixel sm:text-lg sm:mb-3">Tools</h3>
                 <div className="flex flex-wrap gap-2">
-                  <SkillBadge name="Git" color="orange" />
+                     <SkillBadge name="Git" color="orange" />
                   <SkillBadge name="Figma" color="purple" />
                   <SkillBadge name="VS Code" color="blue" />
                   <SkillBadge name="Docker" color="yellow" />
@@ -136,24 +133,24 @@ export default function AboutPage() {
               </div>
             </div>
 
-            <div className="p-6 mt-8 border-2 border-green-500 rounded-lg shadow-lg bg-indigo-950/50">
-              <h2 className="mb-6 text-2xl font-bold text-green-400 font-pixel">Interests</h2>
-              <ul className="space-y-2 text-gray-300 font-vt323">
+            <div className="p-4 border-2 border-green-500 rounded-lg shadow-lg sm:p-6 bg-indigo-950/50">
+              <h2 className="mb-4 text-xl font-bold text-green-400 font-pixel sm:text-2xl sm:mb-6">Interests</h2>
+              <ul className="space-y-1 text-sm text-gray-300 font-vt323 sm:text-base sm:space-y-2">
                 <li className="flex items-center">
                   <span className="inline-block w-2 h-2 mr-2 bg-green-400"></span>
                   Retro Gaming
                 </li>
                 <li className="flex items-center">
                   <span className="inline-block w-2 h-2 mr-2 bg-green-400"></span>
-                 Content Creation
+                  Content Creation
                 </li>
                 <li className="flex items-center">
                   <span className="inline-block w-2 h-2 mr-2 bg-green-400"></span>
-                  Photography
+                   Photography
                 </li>
                 <li className="flex items-center">
                   <span className="inline-block w-2 h-2 mr-2 bg-green-400"></span>
-                  Video Editing
+                 Video Editing
                 </li>
                 <li className="flex items-center">
                   <span className="inline-block w-2 h-2 mr-2 bg-green-400"></span>

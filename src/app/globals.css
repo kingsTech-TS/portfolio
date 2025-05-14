@@ -48,7 +48,6 @@
 }
 
 
-
 /* Custom Retro Fonts */
 .font-pixel {
   font-family: "Press Start 2P", cursive;
@@ -332,8 +331,6 @@
 }
 
 /* Add a specific class to ensure buttons are clickable */
-/* Add this to the CSS file: */
-
 .btn-clickable {
   position: relative;
   z-index: 20;
@@ -350,4 +347,27 @@ a {
 /* Ensure the digital rain doesn't block clicks */
 canvas.digital-rain {
   pointer-events: none !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .font-pixel {
+    letter-spacing: -0.03em;
+  }
+
+  .neon-text {
+    text-shadow: 0 0 3px currentColor, 0 0 7px currentColor, 0 0 14px currentColor;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) {
+  .btn-clickable {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  a,
+  button {
+    touch-action: manipulation;
+  }
 }

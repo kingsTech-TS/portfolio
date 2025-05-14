@@ -1,5 +1,5 @@
 interface SkillBadgeProps {
-    name: string
+ name: string
     color: "cyan" | "blue" | "green" | "yellow" | "orange" | "pink" | "purple" | "white" | "gray" | "red" | "indigo" | "rose" | "silver"
 
   }
@@ -20,13 +20,12 @@ interface SkillBadgeProps {
       indigo: "bg-indigo-900/50 text-indigo-400 border-indigo-500",
       gray: "bg-gray-900/50 text-gray-400 border-gray-500",
     }
-  
-    return (
-      <span
-        className={`inline-flex items-center px-3 py-1 text-sm font-medium rounded-md border ${colorClasses[color]} font-vt323`}
-      >
-        {name}
-      </span>
-    )
-  }
-  
+
+  return (
+    <span
+      className={`inline-flex items-center px-2 py-1 text-xs font-medium rounded-md border ${colorClasses[color]} font-vt323 sm:text-sm sm:px-3`}
+    >
+      {name}
+    </span>
+  )
+}

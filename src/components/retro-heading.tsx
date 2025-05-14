@@ -5,5 +5,7 @@ interface RetroHeadingProps {
 }
 
 export default function RetroHeading({ children }: RetroHeadingProps) {
-  return <h1 className="text-3xl font-bold tracking-tight md:text-5xl lg:text-6xl font-pixel">{children}</h1>
+  return (
+    <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl font-pixel">{children}</h1>
+  )
 }

@@ -19,21 +19,21 @@ export function TimelineItem({ icon, date, title, company, description, color }:
   }
 
   return (
-    <div className="relative pl-10 border-l-2 border-dashed border-gray-700">
+    <div className="relative pl-8 border-l-2 border-dashed border-gray-700 sm:pl-10">
       <div
-        className={`absolute left-[-13px] top-0 flex items-center justify-center w-6 h-6 rounded-full border-2 ${colorClasses[color]}`}
+        className={`absolute left-[-9px] sm:left-[-13px] top-0 flex items-center justify-center w-4 h-4 sm:w-6 sm:h-6 rounded-full border-2 ${colorClasses[color]}`}
       >
         {icon}
       </div>
 
-      <div className="mb-1 text-sm font-vt323">
+      <div className="mb-1 text-xs font-vt323 sm:text-sm">
         <span className={`text-${color}-400`}>{date}</span>
       </div>
 
-      <h3 className="text-lg font-bold font-pixel text-white">{title}</h3>
-      <div className="mb-2 text-sm font-vt323 text-gray-400">{company}</div>
+      <h3 className="text-base font-bold font-pixel text-white sm:text-lg">{title}</h3>
+      <div className="mb-1 text-xs font-vt323 text-gray-400 sm:text-sm sm:mb-2">{company}</div>
 
-      <p className="text-gray-300 font-vt323">{description}</p>
+      <p className="text-sm text-gray-300 font-vt323 sm:text-base">{description}</p>
     </div>
   )
 }

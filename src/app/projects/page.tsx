@@ -1,19 +1,30 @@
+"use client"
+
 import Link from "next/link"
+import { useState } from "react"
 import { ArrowLeft } from "lucide-react"
 import RetroHeading from "@/components/retro-heading"
 import { ScanLines } from "@/components/scan-lines"
 import { NeonText } from "@/components/neon-text"
 import ProjectCard from "@/components/project-card"
 import { RetroGlitch } from "@/components/retro-glitch"
+import DigitalRain from "@/components/digital-rain"
+import RainToggle from "@/components/rain-toggle"
 
 export default function ProjectsPage() {
+  const [showRain, setShowRain] = useState(true)
+
   return (
     <main className="relative min-h-screen overflow-hidden bg-gradient-to-b from-purple-900 via-indigo-900 to-blue-900">
       <ScanLines />
+      
+        {showRain && <DigitalRain color="#00ff9b" speed={0.8} density={1.2} opacity={0.1} />}
+            <RainToggle onToggle={setShowRain} initialState={showRain} />
+
       <div className="container relative z-10 px-4 py-8 mx-auto max-w-7xl sm:py-12 md:py-16">
         <Link
           href="/"
-          className="inline-flex items-center mb-6 text-cyan-300 hover:text-cyan-400 transition-colors sm:mb-8"
+          className="inline-flex items-center mb-6 mt-7 text-cyan-300 hover:text-cyan-400 transition-colors sm:mb-8"
         >
           <ArrowLeft className="w-3 h-3 mr-1 sm:w-4 sm:h-4 sm:mr-2" />
           <span className="text-sm font-pixel sm:text-base">Back to Home</span>
@@ -34,16 +45,16 @@ export default function ProjectsPage() {
           <ProjectCard
             title="Birthday website"
             description="A fun and interactive birthday-themed website featuring animations and personalized messages."
-            image="/birthday.png?height=300&width=400"
+            image="/Projects/birthday.PNG"
             tags={["Next.js", "Canvas", "TailwindCSS"]}
-            demoUrl="#"
+            demoUrl="https://mybirthday-swd6.vercel.app/"
             codeUrl="https://github.com/theKingSi/my-birthday-web21"
             color="pink"
           />
           <ProjectCard
             title="CGPA Calculator"
             description="A simple and intuitive web app to calculate CGPA based on course grades and credit units."
-            image="/CGPA.png?height=300&width=400"
+            image="/Projects/CGPA.PNG"
             tags={["HTML", "CSS", "javaScript"]}
             demoUrl="https://thekingsi.github.io/CGPA-Calculator/"
             codeUrl="https://github.com/theKingSi/CGPA-Calculator"
@@ -51,12 +62,12 @@ export default function ProjectsPage() {
           />
 
           <ProjectCard
-            title="Arcade Game Collection"
-            description="A collection of classic arcade games reimagined for the web, built with JavaScript and HTML5 Canvas."
-            image="/placeholder.svg?height=300&width=400"
-            tags={["JavaScript", "Canvas", "Web Audio API"]}
-            demoUrl="#"
-            codeUrl="#"
+            title="Attendance Managment System"
+            description="Showing up matters! Attendance reflects interest, reliability, and active participation, making every moment count in shared events and experiences."
+            image="/Projects/attend.PNG"
+            tags={["Next.js", "TailwindCSS", "TypeScript, ShandCN"]}
+            demoUrl="https://attendance-ms-tau.vercel.app/"
+            codeUrl="https://github.com/theKingSi/attendance-ms"
             color="yellow"
           />
 

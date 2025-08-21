@@ -7,6 +7,12 @@ export default function AvatarImage() {
         width={400}
         height={400}
       />
+
+        {/* <img
+        src="/profile/me.jpg" 
+        alt="Profile"
+        className="rounded-lg w-full h-full object-cover"
+      /> */}
     </div>
   );
 }

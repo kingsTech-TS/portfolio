@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
 import Link from "next/link"
 import { ArrowLeft, Send, Github, Linkedin, Twitter, Mail } from "lucide-react"
@@ -12,8 +11,14 @@ import RetroHeading from "@/components/retro-heading"
 import { ScanLines } from "@/components/scan-lines"
 import { NeonText } from "@/components/neon-text"
 import { RetroGlitch } from "@/components/retro-glitch"
+import DigitalRain from "@/components/digital-rain"
+import RainToggle from "@/components/rain-toggle"
 
 export default function ContactPage() {
+
+  const [showRain, setShowRain] = useState(true)
+
+
   const [formState, setFormState] = useState({
     name: "",
     email: "",
@@ -49,6 +54,11 @@ export default function ContactPage() {
   return (
     <main className="relative min-h-screen overflow-hidden bg-gradient-to-b from-purple-900 via-indigo-900 to-blue-900">
       <ScanLines />
+
+        {showRain && <DigitalRain color="#00ff9b" speed={0.8} density={1.2} opacity={0.1} />}
+            <RainToggle onToggle={setShowRain} initialState={showRain} />
+
+            
       <div className="container relative z-10 px-4 py-8 mx-auto max-w-7xl sm:py-12 md:py-16">
         <Link
           href="/"

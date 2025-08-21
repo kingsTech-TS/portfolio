@@ -46,7 +46,7 @@ export default function ProjectsPage() {
             title="Birthday website"
             description="A fun and interactive birthday-themed website featuring animations and personalized messages."
             image="/Projects/birthday.PNG"
-            tags={["Next.js", "Canvas", "TailwindCSS"]}
+            tags={["Next.js", "Canvas", "TailwindCSS", "Framer Motion"]}
             demoUrl="https://mybirthday-swd6.vercel.app/"
             codeUrl="https://github.com/theKingSi/my-birthday-web21"
             color="pink"
@@ -65,18 +65,18 @@ export default function ProjectsPage() {
             title="Attendance Managment System"
             description="Showing up matters! Attendance reflects interest, reliability, and active participation, making every moment count in shared events and experiences."
             image="/Projects/attend.PNG"
-            tags={["Next.js", "TailwindCSS", "TypeScript, ShandCN"]}
+            tags={["Next.js", "TailwindCSS", "TypeScript", "ShandCN"]}
             demoUrl="https://attendance-ms-tau.vercel.app/"
             codeUrl="https://github.com/theKingSi/attendance-ms"
             color="yellow"
           />
 
           <ProjectCard
-            title="VHS Movie Database"
+            title="Church Website"
             description="A movie database with a retro VHS aesthetic, using the TMDB API to fetch movie data."
-            image="/placeholder.svg?height=300&width=400"
-            tags={["React", "TMDB API", "Framer Motion"]}
-            demoUrl="#"
+            image="/Projects/church.PNG"
+            tags={["Next.js", "Tailwind", "TypeScript", "ShandCN"]}
+            demoUrl="https://cccogo.vercel.app/"
             codeUrl="#"
             color="green"
           />

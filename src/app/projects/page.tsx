@@ -64,7 +64,7 @@ export default function ProjectsPage() {
           <ProjectCard
             title="Attendance Managment System"
             description="Showing up matters! Attendance reflects interest, reliability, and active participation, making every moment count in shared events and experiences."
-            image="/Projects/attend.PNG"
+            image="/Projects/attends.PNG"
             tags={["Next.js", "TailwindCSS", "TypeScript", "ShandCN"]}
             demoUrl="https://attendance-ms-tau.vercel.app/"
             codeUrl="https://github.com/theKingSi/attendance-ms"
@@ -78,7 +78,7 @@ export default function ProjectsPage() {
             tags={["Next.js", "Tailwind", "TypeScript", "ShandCN"]}
             demoUrl="https://cccogo.vercel.app/"
             codeUrl="#"
-            color="green"
+            color="orange"
           />
 
           <ProjectCard

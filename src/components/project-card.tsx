@@ -12,7 +12,7 @@ interface ProjectCardProps {
   tags: string[]
   demoUrl: string
   codeUrl: string
-  color: "pink" | "cyan" | "yellow" | "green" | "purple" | "orange"
+  color: "pink" | "cyan" | "yellow" | "green" | "purple" | "orange" | "violet"
 }
 
 export default function ProjectCard({ title, description, image, tags, demoUrl, codeUrl, color }: ProjectCardProps) {
@@ -54,6 +54,13 @@ export default function ProjectCard({ title, description, image, tags, demoUrl, 
       text: "text-orange-400",
       hover: "group-hover:bg-orange-950/50",
       button: "border-orange-500 bg-transparent text-orange-400 hover:bg-orange-950/50 hover:text-orange-300",
+    },
+    violet: {
+      border: "border-violet-500",
+      text: "text-violet-400",
+      hover: "group-hover:bg-violet-950/50",
+      button:
+        "border-violet-500 bg-transparent text-violet-400 hover:bg-violet-950/50 hover:text-violet-300",
     },
   }
 

@@ -68,7 +68,7 @@ export default function ProjectsPage() {
             tags={["Next.js", "TailwindCSS", "TypeScript", "ShandCN"]}
             demoUrl="https://attendance-ms-tau.vercel.app/"
             codeUrl="https://github.com/theKingSi/attendance-ms"
-            color="yellow"
+            color="purple"
           />
 
           <ProjectCard
@@ -81,7 +81,7 @@ export default function ProjectsPage() {
             color="orange"
           />
 
-          <ProjectCard
+          {/* <ProjectCard
             title="Synthwave Dashboard"
             description="An admin dashboard with a synthwave design, featuring data visualization and user management."
             image="/placeholder.svg?height=300&width=400"
@@ -92,14 +92,14 @@ export default function ProjectsPage() {
           />
 
           <ProjectCard
-            title="Retro Blog Platform"
+            title="Webnime"
             description="A blog platform with a nostalgic design, built with Next.js and a headless CMS."
-            image="/placeholder.svg?height=300&width=400"
+            image="/Projects/webnime.PNG"
             tags={["Next.js", "Sanity.io", "TypeScript"]}
             demoUrl="#"
             codeUrl="#"
-            color="orange"
-          />
+            color="violet"
+          /> */}
         </div>
       </div>
     </main>

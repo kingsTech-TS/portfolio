@@ -1,6 +1,6 @@
 interface SkillBadgeProps {
  name: string
-    color: "cyan" | "blue" | "green" | "yellow" | "orange" | "pink" | "purple" | "white" | "gray" | "red" | "indigo" | "rose" | "silver"
+    color: "cyan" | "blue" | "green" | "yellow" | "orange" | "pink" | "purple" | "white" | "gray" | "red" | "indigo" | "rose" | "silver" | "violet"
 
   }
   
@@ -19,6 +19,7 @@ interface SkillBadgeProps {
       silver: "bg-gray-900/50 text-gray-400 border-gray-500",
       indigo: "bg-indigo-900/50 text-indigo-400 border-indigo-500",
       gray: "bg-gray-900/50 text-gray-400 border-gray-500",
+      violet: "bg-violet-950/60 text-violet-400 border-violet-600",
     }
 
   return (

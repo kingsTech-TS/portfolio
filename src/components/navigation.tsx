@@ -16,25 +16,15 @@ export default function Navigation() {
 
   // Handle scroll effect for navigation
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10)
-    }
-
+    const handleScroll = () => setIsScrolled(window.scrollY > 10)
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen)
-  }
+  const toggleMenu = () => setIsOpen(!isOpen)
+  const closeMenu = () => setIsOpen(false)
 
-  const closeMenu = () => {
-    setIsOpen(false)
-  }
-
-  const isActive = (path: string) => {
-    return pathname === path
-  }
+  const isActive = (path: string) => pathname === path
 
   return (
     <header
@@ -43,16 +33,18 @@ export default function Navigation() {
       } backdrop-blur-sm border-b border-cyan-500/30`}
     >
       <div className="container flex items-center justify-between h-14 px-4 mx-auto max-w-7xl sm:h-16">
+        {/* Logo */}
         <Link href="/" className="flex items-center space-x-2" onClick={closeMenu}>
           <RetroGlitch>
             <span className="text-lg font-bold text-cyan-400 font-pixel sm:text-xl">&lt;DEV/&gt;</span>
           </RetroGlitch>
         </Link>
 
+        {/* Desktop Menu */}
         <nav className="hidden md:flex md:items-center md:space-x-4 lg:space-x-6">
           <Link
             href="/"
-            className={`text-xs font-medium transition-colors font-pixel sm:text-sm ${
+            className={`text-xs font-medium font-pixel sm:text-sm transition-colors ${
               isActive("/") ? "text-pink-400" : "text-gray-300 hover:text-pink-400"
             } ${isTransitioning ? "pointer-events-none" : ""}`}
           >
@@ -60,7 +52,7 @@ export default function Navigation() {
           </Link>
           <Link
             href="/about"
-            className={`text-xs font-medium transition-colors font-pixel sm:text-sm ${
+            className={`text-xs font-medium font-pixel sm:text-sm transition-colors ${
               isActive("/about") ? "text-yellow-400" : "text-gray-300 hover:text-yellow-400"
             } ${isTransitioning ? "pointer-events-none" : ""}`}
           >
@@ -68,7 +60,7 @@ export default function Navigation() {
           </Link>
           <Link
             href="/projects"
-            className={`text-xs font-medium transition-colors font-pixel sm:text-sm ${
+            className={`text-xs font-medium font-pixel sm:text-sm transition-colors ${
               isActive("/projects") ? "text-green-400" : "text-gray-300 hover:text-green-400"
             } ${isTransitioning ? "pointer-events-none" : ""}`}
           >
@@ -76,7 +68,7 @@ export default function Navigation() {
           </Link>
           <Link
             href="/contact"
-            className={`text-xs font-medium transition-colors font-pixel sm:text-sm ${
+            className={`text-xs font-medium font-pixel sm:text-sm transition-colors ${
               isActive("/contact") ? "text-cyan-400" : "text-gray-300 hover:text-cyan-400"
             } ${isTransitioning ? "pointer-events-none" : ""}`}
           >
@@ -84,6 +76,7 @@ export default function Navigation() {
           </Link>
         </nav>
 
+        {/* Mobile Menu Button */}
         <Button
           variant="ghost"
           size="icon"
@@ -91,54 +84,81 @@ export default function Navigation() {
           onClick={toggleMenu}
           disabled={isTransitioning}
         >
-          {isOpen ? <X className="w-5 h-5 sm:w-6 sm:h-6" /> : <Menu className="w-5 h-5 sm:w-6 sm:h-6" />}
+          {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </Button>
       </div>
 
+      {/* Mobile Side Drawer */}
       {isOpen && (
-        <div className="fixed inset-0 z-40 flex flex-col pt-16 bg-indigo-950/95 md:hidden">
-          <nav className="flex flex-col items-center justify-center flex-1 space-y-6 sm:space-y-8">
-            <Link
-              href="/"
-              className={`flex items-center text-lg font-medium text-gray-300 transition-colors hover:text-pink-400 font-pixel sm:text-xl ${
-                isTransitioning ? "pointer-events-none" : ""
-              }`}
-              onClick={closeMenu}
-            >
-              <Home className="w-4 h-4 mr-2 sm:w-5 sm:h-5" />
-              HOME
-            </Link>
-            <Link
-              href="/about"
-              className={`flex items-center text-lg font-medium text-gray-300 transition-colors hover:text-yellow-400 font-pixel sm:text-xl ${
-                isTransitioning ? "pointer-events-none" : ""
-              }`}
-              onClick={closeMenu}
-            >
-              <User className="w-4 h-4 mr-2 sm:w-5 sm:h-5" />
-              ABOUT
-            </Link>
-            <Link
-              href="/projects"
-              className={`flex items-center text-lg font-medium text-gray-300 transition-colors hover:text-green-400 font-pixel sm:text-xl ${
-                isTransitioning ? "pointer-events-none" : ""
-              }`}
-              onClick={closeMenu}
-            >
-              <Code className="w-4 h-4 mr-2 sm:w-5 sm:h-5" />
-              PROJECTS
-            </Link>
-            <Link
-              href="/contact"
-              className={`flex items-center text-lg font-medium text-gray-300 transition-colors hover:text-cyan-400 font-pixel sm:text-xl ${
-                isTransitioning ? "pointer-events-none" : ""
-              }`}
-              onClick={closeMenu}
-            >
-              <Mail className="w-4 h-4 mr-2 sm:w-5 sm:h-5" />
-              CONTACT
-            </Link>
-          </nav>
+        <div className="fixed inset-0 z-[60] md:hidden">
+          {/* Background Dim */}
+          <div
+            className="absolute inset-0 bg-black/50 backdrop-blur-sm transition-opacity duration-300"
+            onClick={closeMenu}
+          />
+
+          {/* Drawer - now slides from LEFT */}
+          <div
+            className={`absolute left-0 top-0 h-full w-3/4 max-w-sm bg-indigo-950 shadow-xl transform transition-transform duration-300 ${
+              isOpen ? "translate-x-0" : "-translate-x-full"
+            }`}
+          >
+            <div className="flex justify-between items-center p-4 border-b border-cyan-500/30">
+              <span className="text-lg font-bold text-cyan-400 font-pixel">&lt;DEV/&gt;</span>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="text-gray-300 hover:text-white hover:bg-transparent"
+                onClick={closeMenu}
+              >
+                <X className="w-6 h-6" />
+              </Button>
+            </div>
+
+            {/* Links */}
+            <nav className="flex flex-col p-6 space-y-6 bg-indigo-950">
+              <Link
+                href="/"
+                onClick={closeMenu}
+                className={`flex items-center text-lg font-pixel transition-colors ${
+                  isActive("/") ? "text-pink-400" : "text-gray-300 hover:text-pink-400"
+                }`}
+              >
+                <Home className="w-5 h-5 mr-2" /> 
+                HOME
+              </Link>
+              <Link
+                href="/about"
+                onClick={closeMenu}
+                className={`flex items-center text-lg font-pixel transition-colors ${
+                  isActive("/about") ? "text-yellow-400" : "text-gray-300 hover:text-yellow-400"
+                }`}
+              >
+                <User className="w-5 h-5 mr-2" />
+                ABOUT
+              </Link>
+              <Link
+                href="/projects"
+                onClick={closeMenu}
+                className={`flex items-center text-lg font-pixel transition-colors ${
+                  isActive("/projects") ? "text-green-400" : "text-gray-300 hover:text-green-400"
+                }`}
+              >
+                <Code className="w-5 h-5 mr-2" />
+                PROJECTS
+              </Link>
+              <Link
+                href="/contact"
+                onClick={closeMenu}
+                className={`flex items-center text-lg font-pixel transition-colors ${
+                  isActive("/contact") ? "text-cyan-400" : "text-gray-300 hover:text-cyan-400"
+                }`}
+              >
+                <Mail className="w-5 h-5 mr-2" />
+                CONTACT
+              </Link>
+            </nav>
+          </div>
         </div>
       )}
     </header>

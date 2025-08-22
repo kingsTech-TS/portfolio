@@ -13,10 +13,12 @@ import { NeonText } from "@/components/neon-text"
 import { RetroGlitch } from "@/components/retro-glitch"
 import DigitalRain from "@/components/digital-rain"
 import RainToggle from "@/components/rain-toggle"
+import { useToast } from "@/components/ui/use-toast"
 
 export default function ContactPage() {
 
   const [showRain, setShowRain] = useState(true)
+  const { toast } = useToast()
 
 
   const [formState, setFormState] = useState({
@@ -32,6 +34,15 @@ export default function ContactPage() {
     setFormState({
       ...formState,
       [e.target.name]: e.target.value,
+    })
+  }
+
+  const handleDownload = () => {
+    // Trigger toast
+    toast({
+      title: "Download Started",
+      description: "Your CV is downloading...",
+      variant: "default",
     })
   }
 
@@ -55,10 +66,10 @@ export default function ContactPage() {
     <main className="relative min-h-screen overflow-hidden bg-gradient-to-b from-purple-900 via-indigo-900 to-blue-900">
       <ScanLines />
 
-        {showRain && <DigitalRain color="#00ff9b" speed={0.8} density={1.2} opacity={0.1} />}
-            <RainToggle onToggle={setShowRain} initialState={showRain} />
+      {showRain && <DigitalRain color="#00ff9b" speed={0.8} density={1.2} opacity={0.1} />}
+      <RainToggle onToggle={setShowRain} initialState={showRain} />
 
-            
+
       <div className="container relative z-10 px-4 py-8 mx-auto max-w-7xl sm:py-12 md:py-16">
         <Link
           href="/"
@@ -68,10 +79,10 @@ export default function ContactPage() {
           <span className="text-sm font-pixel sm:text-base">Back to Home</span>
         </Link>
 
-          <RetroHeading>
-        <RetroGlitch>
-          <NeonText color="pink">GET</NeonText>
-          <span className="text-white">_IN_TOUCH</span>
+        <RetroHeading>
+          <RetroGlitch>
+            <NeonText color="pink">GET</NeonText>
+            <span className="text-white">_IN_TOUCH</span>
           </RetroGlitch>
         </RetroHeading>
 
@@ -80,7 +91,7 @@ export default function ContactPage() {
             <div className="p-4 border-2 border-pink-500 rounded-lg shadow-lg sm:p-6 bg-indigo-950/50">
               <h2 className="mb-4 text-xl font-bold text-pink-400 font-pixel sm:text-2xl sm:mb-6">Contact Me</h2>
 
-               {isSubmitted ? (
+              {isSubmitted ? (
                 <div className="p-6 text-center">
                   <RetroGlitch>
                     <h3 className="mb-4 text-xl font-bold text-green-400 font-pixel">Message Sent!</h3>
@@ -217,7 +228,7 @@ export default function ContactPage() {
                   </a>
 
                   <a
-                     href="https://x.com/oneboilikedat"
+                    href="https://x.com/oneboilikedat"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center p-2 transition-colors border-2 border-pink-500 rounded-lg sm:p-3 bg-indigo-950/50 hover:bg-pink-950/50 group"
@@ -225,6 +236,17 @@ export default function ContactPage() {
                     <Twitter className="w-4 h-4 mr-2 text-pink-400 sm:w-5 sm:h-5 sm:mr-3" />
                     <span className="text-sm text-gray-300 font-vt323 group-hover:text-pink-300 sm:text-base">
                       twitter.com/oneboilikedat
+                    </span>
+                  </a>
+
+                  <a
+                    href="/CV/Nnabugwu_Solomon_cv.docx"
+                    download
+                    onClick={handleDownload}
+                    className="flex items-center justify-center p-2 transition-colors border-2 border-red-500 rounded-lg sm:p-3 bg-indigo-950/50 hover:bg-red-950/50 group"
+                  >
+                    <span className="text-sm font-vt323 text-gray-300 group-hover:text-red-300 sm:text-base">
+                      📄 Download CV
                     </span>
                   </a>
                 </div>
@@ -235,7 +257,7 @@ export default function ContactPage() {
               <h2 className="mb-4 text-xl font-bold text-purple-400 font-pixel sm:text-2xl sm:mb-6">Office Hours</h2>
 
               <div className="space-y-2 text-sm text-gray-300 font-vt323 sm:text-base sm:space-y-4">
-                     <p>
+                <p>
                   <span className="font-bold text-purple-300">Monday - Friday:</span> 9:00 AM - 5:00 PM
                 </p>
                 <p>

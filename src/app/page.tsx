@@ -44,21 +44,22 @@ export default function Home() {
               <span className="text-green-400">modern</span> technologies.
             </p>
 
-            <div className="flex flex-wrap gap-3 pt-2 sm:gap-4 sm:pt-4">
-              <Link href="/projects" className="relative z-20">
-                <Button variant="retro" className="relative z-20 text-sm sm:text-base">
-                  <span>View Projects</span>
-                  <Code className="w-4 h-4 ml-2" />
-                </Button>
-              </Link>
+            <div className="flex flex-wrap justify-center gap-3 pt-2 sm:justify-start sm:gap-4 sm:pt-4">
+  <Link href="/projects" className="relative z-20">
+    <Button variant="retro" className="relative z-20 text-sm sm:text-base">
+      <span>View Projects</span>
+      <Code className="w-4 h-4 ml-2" />
+    </Button>
+  </Link>
 
-              <Link href="/contact" className="relative z-20">
-                <Button variant="retroPink" className="relative z-20 text-sm sm:text-base">
-                  <span>Contact Me</span>
-                  <Mail className="w-4 h-4 ml-2" />
-                </Button>
-              </Link>
-            </div>
+  <Link href="/contact" className="relative z-20">
+    <Button variant="retroPink" className="relative z-20 text-sm sm:text-base">
+      <span>Contact Me</span>
+      <Mail className="w-4 h-4 ml-2" />
+    </Button>
+  </Link>
+</div>
+
           </div>
 
 

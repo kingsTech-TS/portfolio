@@ -6,6 +6,10 @@ import { ThemeProvider } from "@/components/theme-provider"
 import Navigation from "@/components/navigation"
 import { PageTransitionProvider } from "@/components/page-transition"
 
+// 👇 import your custom toast system
+import { ToastProvider } from "@/components/ui/use-toast"
+import Toasts from "@/components/ui/toasts"
+
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -28,9 +32,11 @@ export default function RootLayout({
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <PageTransitionProvider>
-        
-            <Navigation />
-            {children}
+            <ToastProvider>
+              <Navigation />
+              {children}
+              <Toasts /> {/* 👈 Renders all active toasts */}
+            </ToastProvider>
           </PageTransitionProvider>
         </ThemeProvider>
       </body>

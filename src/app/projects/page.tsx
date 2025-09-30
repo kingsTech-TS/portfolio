@@ -46,7 +46,7 @@ export default function ProjectsPage() {
             title="Birthday website"
             description="A fun and interactive birthday-themed website featuring animations and personalized messages."
             image="/Projects/birthday.PNG"
-            tags={["Next.js", "Canvas", "TailwindCSS", "Framer Motion"]}
+            tags={["Next.js", "Canvas", "TailwindCSS", "Framer Motion", "TypeScript"]}
             demoUrl="https://mybirthday-swd6.vercel.app/"
             codeUrl="https://github.com/theKingSi/my-birthday-web21"
             color="pink"
@@ -73,33 +73,33 @@ export default function ProjectsPage() {
 
           <ProjectCard
             title="Church Website"
-            description="A movie database with a retro VHS aesthetic, using the TMDB API to fetch movie data."
+            description="A Christian church and online ministry platform, with a dashboard that allows user to update and delete contents in the website."
             image="/Projects/church.PNG"
             tags={["Next.js", "Tailwind", "TypeScript", "ShandCN"]}
             demoUrl="https://cccogo.vercel.app/"
-            codeUrl="#"
+            codeUrl="https://github.com/kingsTech-TS/CCCOGO"
             color="orange"
           />
 
-          {/* <ProjectCard
-            title="Synthwave Dashboard"
-            description="An admin dashboard with a synthwave design, featuring data visualization and user management."
-            image="/placeholder.svg?height=300&width=400"
-            tags={["Next.js", "D3.js", "Tailwind CSS"]}
-            demoUrl="#"
-            codeUrl="#"
-            color="purple"
+          <ProjectCard
+            title="Med Track"
+            description="A dashboard interface where authorized users can sign in to manage medicine inventory and view insights, with Real-time tracking of stock levels, Monitoring of expiration dates Role-based multi-user access and permissions, Analytics & reporting tools, Alerts for low stock or impending expiry, Secure, HIPAA-compliant handling of medical dat."
+            image="/Projects/med.PNG"
+            tags={["Next.js", "Tailwind", "TypeScript", "ShandCN"]}
+            demoUrl="https://medicine-inventory-management-syste-tau.vercel.app/dashboard"
+            codeUrl="https://github.com/kingsTech-TS/Medicine-Inventory-Management-System"
+            color="green"
           />
 
           <ProjectCard
-            title="Webnime"
-            description="A blog platform with a nostalgic design, built with Next.js and a headless CMS."
-            image="/Projects/webnime.PNG"
-            tags={["Next.js", "Sanity.io", "TypeScript"]}
-            demoUrl="#"
-            codeUrl="#"
-            color="violet"
-          /> */}
+            title="Fun-Learn"
+            description="FunLearn is a web app that lets you upload any book (PDF, EPUB, text) and instantly transform it into a full learning experience. It generates, Smart summaries capturing key ideas Quizzes to test understanding, Interactive games (flashcards, matching, puzzles), Audio versions so you can listen on the go."
+            image="/Projects/fun.PNG"
+            tags={["Next.js", "Tailwind", "TypeScript", "ShandCN"]}
+            demoUrl="https://fun-learn-gamma.vercel.app/"
+            codeUrl="https://github.com/kingsTech-TS/fun-learn"
+            color="black"
+          />
         </div>
       </div>
     </main>

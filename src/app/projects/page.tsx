@@ -17,9 +17,9 @@ export default function ProjectsPage() {
   return (
     <main className="relative min-h-screen overflow-hidden bg-gradient-to-b from-purple-900 via-indigo-900 to-blue-900">
       <ScanLines />
-      
-        {showRain && <DigitalRain color="#00ff9b" speed={0.8} density={1.2} opacity={0.1} />}
-            <RainToggle onToggle={setShowRain} initialState={showRain} />
+
+      {showRain && <DigitalRain color="#00ff9b" speed={0.8} density={1.2} opacity={0.1} />}
+      <RainToggle onToggle={setShowRain} initialState={showRain} />
 
       <div className="container relative z-10 px-4 py-8 mx-auto max-w-7xl sm:py-12 md:py-16">
         <Link
@@ -42,6 +42,16 @@ export default function ProjectsPage() {
         </p>
 
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 sm:gap-8">
+          <ProjectCard
+            title="Kenneth Dike Library"
+            description="The Kenneth Dike Library website is a clean, modern web platform designed to provide easy access to library information and resources and visitors to explore library services, resources."
+            image="/Projects/home.PNG"
+            tags={["Next.js", "ShadCN", "TailwindCSS", "Framer Motion", "TypeScript", "Firebase", "MongoDB"]}
+            demoUrl="https://kenneth-dike-library-iota.vercel.app/"
+            codeUrl="https://github.com/kingsTech-TS/Kenneth-Dike-Library-"
+            color="cyan"
+          />
+
           <ProjectCard
             title="Birthday website"
             description="A fun and interactive birthday-themed website featuring animations and personalized messages."
@@ -100,8 +110,29 @@ export default function ProjectsPage() {
             codeUrl="https://github.com/kingsTech-TS/fun-learn"
             color="black"
           />
+
+          <ProjectCard
+            title=" Cosmic Explorer"
+            description="A space-themed exploration app with interactive 3D models and educational content about the universeis with stunning images from NASA’s Astronomy Picture of the Day. The site features a clean interface with navigation to sections like Home, APOD, and Gallery, and invites visitors to discover daily high-definition photos."
+            image="/Projects/cosmic.PNG"
+            tags={["Next.js", "TailwindCSS", "TypeScript", "ShandCN", "NASA API"]}
+            demoUrl="https://cosmic-e.vercel.app/"
+            codeUrl="https://github.com/kingsTech-TS/Cosmic-E"
+            color="purple"
+          />
+
+          <ProjectCard
+            title="Techhub Website"
+            description="The official online presence of a growing technology community at Ekiti State University focused on empowering students and young innovators. The site showcases the Hub’s mission to help learners build in-demand tech skills across areas like web and mobile development, cloud computing, AI/machine learning, cybersecurity, UI/UX design, and more."
+            image="/Projects/tech.PNG"
+            tags={["Next.js", "Tailwind", "TypeScript", "ShandCN"]}
+            demoUrl="https://www.techhubeksu.com/"
+            codeUrl="https://github.com/AKDebug-UX/TechHub-EKSU-Site"
+            color="orange"
+          />
         </div>
       </div>
     </main>
   )
 }
+

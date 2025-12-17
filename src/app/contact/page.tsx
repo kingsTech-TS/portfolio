@@ -3,7 +3,7 @@
 import type React from "react"
 import { useState } from "react"
 import Link from "next/link"
-import { ArrowLeft, Send, Github, Linkedin, Twitter, Mail } from "lucide-react"
+import { ArrowLeft, Send, Github, Linkedin, Twitter, Mail, MessageSquareMore } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -221,7 +221,7 @@ export default function ContactPage() {
                     rel="noopener noreferrer"
                     className="flex items-center p-2 transition-colors border-2 border-blue-500 rounded-lg sm:p-3 bg-indigo-950/50 hover:bg-blue-950/50 group"
                   >
-                    <Linkedin className="w-4 h-4 mr-2 text-blue-400 sm:w-5 sm:h-5 sm:mr-3" />
+                    <MessageSquareMore className="w-4 h-4 mr-2 text-blue-400 sm:w-5 sm:h-5 sm:mr-3" />
                     <span className="text-sm text-gray-300 font-vt323 group-hover:text-blue-300 sm:text-base">
                       https://wa.link/mzkoo2
                     </span>
